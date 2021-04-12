@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import axios from 'axios';
+import Counter from './components/Counter';
+import Todos from './components/Todos';
+import CounterContainer from './containers/CounterContainer';
+import TodoList from './components/TodoList';
+import TodoInsert from './components/TodoInsert';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // <ColorContext.Provider value={{ color: 'red'}}>
+    //   <ColorBox/>
+    // </ColorContext.Provider>
+    <div>
+      {/* <Counter number={0}/> */}
+      {/* <CounterContainer /> */}
+      <TodoList/>
+      <TodoInsert/>
     </div>
   );
-}
+};
 
 export default App;
