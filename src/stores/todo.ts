@@ -17,12 +17,13 @@ type Todo = {
 export const todo = observable<Todo>({
   todoData: [],
   currentId: 0,
-
   addTodo(content) {
+    const index = 1;
     console.log('t', content);
     this.todoData.push({ id: this.currentId, content, checked: false});
     this.currentId++;
-    console.log('data', this.todoData[0]["content"])
+
+    localStorage.setItem(`item${index}`, JSON.stringify({ id: this.currentId, content, checked: false })); // 로컬스토리지로 저장 시도..
   },
   removeTodo(id) {
     const index = this.todoData.findIndex((v) => v.id === id);
@@ -31,3 +32,5 @@ export const todo = observable<Todo>({
     }
   }
 })
+
+const storage = localStorage.setItem('item', JSON.stringify({a: 1, b: 2}));

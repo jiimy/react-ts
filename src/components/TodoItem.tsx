@@ -14,12 +14,13 @@ const TodoItem = ({data} : Props ) => {
   }
 
   return (  
-    <div>
-
-      <input type="checkbox"/>
-      <span>{data.content}</span>
-      <span onClick={removeItem} style={{ cursor: 'pointer', padding: '4px'}}>X</span>
-    </div>
+    <>
+      <div>
+        <input type="checkbox"/>
+        <span>{data.content}</span>
+        <span onClick={removeItem} style={{ cursor: 'pointer', padding: '4px'}}>X</span>
+      </div>
+    </>
   )
 }
 
