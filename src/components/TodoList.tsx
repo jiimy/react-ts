@@ -10,10 +10,9 @@ const TodoList = () => {
   return useObserver(() => (
     <div>
       'TodoList'
-      { todoData}
-      {/* {todoData.map((v) => (
+      {todoData.map((v) => (
         <TodoItem data={v} key={`todoData_${v.id}`} />
-      ))} */}
+      ))}
     </div>
   ));
 }

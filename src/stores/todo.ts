@@ -8,7 +8,6 @@ export type TodoData = {
 
 interface Todo {
   todoData: TodoData[];
-  data: [];
   currentId: number;
   addTodo: (content: string) => void;
   removeTodo: (id: number) => void;
@@ -17,14 +16,12 @@ interface Todo {
 export const todo = observable<Todo>({
   todoData: [],
   currentId: 0,
-  data: [],
 
   addTodo(content) {
     console.log('t', content);
     this.todoData.push({ id: this.currentId, content, checked: false});
     this.currentId++;
-    console.log( typeof this.data);
-    console.log('data', this.todoData);
+    console.log('data', this.todoData[0]["content"])
   },
   removeTodo(id) {
     const index = this.todoData.findIndex((v) => v.id === id);
