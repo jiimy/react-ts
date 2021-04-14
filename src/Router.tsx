@@ -7,7 +7,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/todoform" component={TodoMobx1}/>
+        <Route path="/todoform" component={TodoForm}/>
       </Switch>
     </BrowserRouter>
   )

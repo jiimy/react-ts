@@ -9,9 +9,9 @@ import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 ReactDOM.render(
-  <div>
+  <>
     <App />
-  </div>,
+  </>,
   document.getElementById('root')
 );
 
