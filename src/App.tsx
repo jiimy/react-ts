@@ -5,6 +5,7 @@ import Todos from './components/Todos';
 import CounterContainer from './containers/CounterContainer';
 import TodoList from './components/TodoList';
 import TodoInsert from './components/TodoInsert';
+import Router from './Router';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       {/* <CounterContainer /> */}
       <TodoList/>
       <TodoInsert/>
+      <Router/>
     </div>
   );
 };
