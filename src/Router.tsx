@@ -1,12 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import mobxIndex from './components/mobx/mobxIndex';
+import TodoForm from './components/TodoForm';
+import TodoMobx1 from './page/TodoMobx1';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/mobx" component={mobxIndex}/>
+        <Route path="/todoform" component={TodoMobx1}/>
       </Switch>
     </BrowserRouter>
   )

@@ -1,19 +1,26 @@
-import React from 'react';
-import './TodoItem.css';
-import { Todo } from '../modules/todos';
+import React from 'react'
+import useStore from '../useStore';
+import { TodoData } from '../stores/todo';
 
-type TodoItemProps = {
-  todo: Todo;
-};
-
-function TodoItem({ todo }: TodoItemProps) {
-  // TODO: 커스텀 Hook 사용해서 onToggle / onRemove 구현
-  return (
-    <li className={`TodoItem ${todo.done ? 'done' : ''}`}>
-      <span className="text">{todo.text}</span>
-      <span className="remove">(X)</span>
-    </li>
-  );
+type Props = {
+  data: TodoData;
 }
 
-export default TodoItem;
+const TodoItem = ({data} : Props ) => {
+  const { todo} = useStore(); // 스토어 중에 todo가져옴
+
+  const removeItem = () => {
+    todo.removeTodo(data.id);
+  }
+
+  return (
+    <div>
+      
+      <input type="checkbox"/>
+      <span>{data.content}</span>
+      <span onClick={removeItem}>X</span>
+    </div>
+  )
+}
+
+export default TodoItem
