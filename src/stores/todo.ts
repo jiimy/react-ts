@@ -1,12 +1,13 @@
 import { observable } from 'mobx';
 
+// todoData 타입
 export type TodoData = {
   id: number;
   content: string;
   checked: boolean;
 }
 
-interface Todo {
+type Todo = {
   todoData: TodoData[];
   currentId: number;
   addTodo: (content: string) => void;

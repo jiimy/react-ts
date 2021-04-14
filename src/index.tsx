@@ -4,10 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { createStore } from 'redux'; // 스토어 생성
-import { Provider } from 'react-redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
-
 ReactDOM.render(
   <>
     <App />
