@@ -15,6 +15,8 @@ type Todo = {
 }
 
 export const todo = observable<Todo>({
+  // TODO: ⓑ: 로컬스토리지에 저장을 했다면 가져올때 로컬스토리지걸 먼저 가져오고 그 뒤에 addTodo 해야되고, 
+  // 로컬스토리지는 키:밸류기 때문에 키값들을 조회해서 가져오게하기
   todoData: [],
   currentId: 0,
   addTodo(content) {  
@@ -23,6 +25,7 @@ export const todo = observable<Todo>({
     this.todoData.push({ id: this.currentId, content, checked: false});
     this.currentId++;
 
+    // TODO: ⓐ: 저장을 할수있는데 리스트에 뿌려줄때 
     localStorage.setItem(`item${index}`, JSON.stringify({ id: this.currentId, content, checked: false })); // 로컬스토리지로 저장 시도..
   },
   removeTodo(id) {
@@ -32,5 +35,3 @@ export const todo = observable<Todo>({
     }
   }
 })
-
-const storage = localStorage.setItem('item', JSON.stringify({a: 1, b: 2}));
