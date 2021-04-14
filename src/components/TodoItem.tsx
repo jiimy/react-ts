@@ -13,7 +13,7 @@ const TodoItem = ({data} : Props ) => {
     todo.removeTodo(data.id);
   }
 
-  return (
+  return (  
     <div>
 
       <input type="checkbox"/>
