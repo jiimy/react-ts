@@ -17,7 +17,7 @@ type Todo = {
 export const todo = observable<Todo>({
   todoData: [],
   currentId: 0,
-  addTodo(content) {
+  addTodo(content) {  //
     const index = 1;
     console.log('t', content);
     this.todoData.push({ id: this.currentId, content, checked: false});
