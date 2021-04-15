@@ -1,21 +1,27 @@
 import React, { useState } from 'react'
 import TodoList from './TodoList';
 
+
+type Props = {
+  func? : (value: string) => void;
+}
 // 입력하는 부분
-const Header = () => {
+const Header = ({ func=(value: string) => '' }: Props) => {
   const [text, setText] = useState('');
   const [data, setData] = useState('');
 
   const Change = (e: any) => {
     setText(e.target.value);
-    console.log(text);
+    // console.log(text);
   }
 
   const KeyPress = (e: any) => {
     if (e.key === 'Enter') {
       console.log('엔터');
       setData(text);
+      func(text);
       setText('');
+
     }
   }
 

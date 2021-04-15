@@ -1,15 +1,20 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 type Props = {
-  data?: string | boolean;
+  data?: (value: string) => void;
 }
 
 const TodoItem = ({ data }: Props) => {
   const [theArray, setTheArray] = useState(['']);
+
+  useEffect(() => {
+    console.log('받은 데이터', data)
+  })
+
   if(data !== undefined) {
     // setTheArray([[...theArray, theArray.length]);
     // setTheArray([...theArray, `Entry ${theArray.length}`]);
-    console.log('받은 데이터', data)
+    
     
   }
   

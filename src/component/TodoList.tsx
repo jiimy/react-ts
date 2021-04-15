@@ -2,7 +2,7 @@ import React from 'react'
 import TodoItem from './TodoItem'
 
 type Props = {
-  data?: string;
+  data?: (value: string) => void;
 }
 
 const TodoList = ({data }:Props) => {
