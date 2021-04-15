@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import Router from './Router';
+import TodoForm from './component/TodoForm';
+import '../src/assets/todo.scss';
 
 const App = () => {
   return (
@@ -11,7 +13,8 @@ const App = () => {
       {/* <Counter number={0}/> */}
       {/* <CounterContainer /> */}
       {/* 커밋테스트 */}
-      <Router/>
+      <TodoForm/>
+      {/* <Router/> */}
     </div>
   );
 };
