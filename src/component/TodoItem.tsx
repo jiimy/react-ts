@@ -9,7 +9,7 @@ const TodoItem = ({ data }: Props) => {
 
   useEffect(() => {
     console.log('받은 데이터', data)
-  })
+  }, [data])
 
   if(data !== undefined) {
     // setTheArray([[...theArray, theArray.length]);

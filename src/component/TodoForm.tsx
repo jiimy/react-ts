@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Footer from './Footer'
 import Header from './Header'
 import TodoList from './TodoList'
 
 const TodoForm = () => {
   const [data, Setdata] = useState();
-
+  
   const SendData = (value: string)  => {
     console.log('Header로부터 받은 데이터', value);
     // Setdata(value);
