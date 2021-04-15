@@ -1,20 +1,34 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 type Props = {
-  data? : [];
+  data?: string | boolean;
 }
 
-const TodoItem = ({data}:Props) => {
+const TodoItem = ({ data }: Props) => {
+  const [theArray, setTheArray] = useState(['']);
+  if(data !== undefined) {
+    // setTheArray([[...theArray, theArray.length]);
+    // setTheArray([...theArray, `Entry ${theArray.length}`]);
+    console.log('받은 데이터', data)
+    
+  }
+  
   return (
-    <ul>
-      <li>
-      <div className="view" >
-        <input className="toggle" type="checkbox" />
-        <label >123</label>
-        <button className="destroy" ></button>
-      </div>
-      </li>
-    </ul>
+    <>
+      {
+          // theArray.map((item, index) => {
+          //   return (
+          //     <li>{theArray}</li>
+          // )})
+        }
+        <li>
+          <div className="view" >
+            <input className="toggle" type="checkbox" />
+            <label> 기본 </label>
+            <button className="destroy" ></button>
+          </div>
+        </li>
+    </>
   )
 }
 

@@ -3,11 +3,15 @@ import React from 'react'
 // All, Active, Completed / Clear completed / Active 갯수 표기 
 const Footer = () => {
   return (
-    <footer>
-      <span todo-count>1 item left</span>
+    <footer className="footer">
+      <span className="todo-count">
+      <strong>1</strong>
+      <span>item</span>
+      <span> left</span>
+    </span>
       <ul className="filters">
         <li className="selected">
-          <a href="/#">All</a>
+          <a href="/#" className="selected">All</a>
         </li>
         <li className="">
           <a href="#/active">Active</a>

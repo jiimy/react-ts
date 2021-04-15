@@ -1,7 +1,11 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 
-const TodoList = () => {
+type Props = {
+  data?: string;
+}
+
+const TodoList = ({data }:Props) => {
   const Change = (value: string) => {
     console.log(value);
   }
@@ -15,7 +19,7 @@ const TodoList = () => {
         </>
       }
       <ul className="todo-list">
-        <TodoItem/>
+        <TodoItem data={data}/>
       </ul>
     </section>
   )
