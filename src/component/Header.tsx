@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import TodoList from './TodoList';
-
+import useInputState from './useInputState'
 
 type Props = {
-  func? : (value: string) => void;
+  saveTodo: any;
 }
 // 입력하는 부분
-const Header = ({ func=(value: string) => '' }: Props) => {
+const Header = ({ saveTodo }: Props) => {
   const [text, setText] = useState('');
   const [data, setData] = useState('');
+  const { value, reset, onChange } = useInputState();
 
   const Change = (e: any) => {
     setText(e.target.value);
@@ -17,11 +17,9 @@ const Header = ({ func=(value: string) => '' }: Props) => {
 
   const KeyPress = (e: any) => {
     if (e.key === 'Enter') {
-      console.log('엔터');
       setData(text);
-      func(text);
       setText('');
-
+      saveTodo(text);
     }
   }
 
