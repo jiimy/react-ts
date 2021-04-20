@@ -7,15 +7,24 @@ type Props = {
 }
 
 const TodoList = ({ data, deleteTodo }: Props) => {
-  const [check, setCheck] = useState(false);
+  const [check, setCheck] = useState({
+    initailState : false,
+    index : 0
+  });
   const [checked, setChecked] = React.useState(true);
   const Click = (index:any) => {
     deleteTodo(index);
   }
 
-  const checkEvent = (checked: any) => {
-    setCheck(!check);
-    console.log('aa');
+  const checkEvent = (checked: any, index:any) => {
+    // setCheck(!check);
+    console.log(checked);
+    console.log('index', index);
+    setCheck({
+      ...check,
+      initailState: checked,
+      index: index
+    })
   }
 
   return (
@@ -30,10 +39,12 @@ const TodoList = ({ data, deleteTodo }: Props) => {
         {data &&
           data.map((item: any, index: any) => {
             return (
-              <li key={index} className={classnames("", check === true && 'completed')}>
+              // TODO: 클릭시에 취소선 표기, completed 로 구분
+              // <li key={index} className={classnames("", )}>
+                <li key={index} className={classnames("", (check.initailState === true ) && 'completed')}>
                 <div className="view" >
                   {/* TODO : check 상태 */}
-                  <input className="toggle" type="checkbox" onChange={(event) => checkEvent(event.target.checked)}/>
+                  <input className="toggle" type="checkbox" onChange={(event) => checkEvent(event.target.checked, index)}/>
                   <label> {data[index]} </label>
                   <button className="destroy" onClick={() => Click(index)}></button>
                 </div>
