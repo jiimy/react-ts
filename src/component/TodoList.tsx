@@ -40,8 +40,8 @@ const TodoList = ({ data, deleteTodo }: Props) => {
           data.map((item: any, index: any) => {
             return (
               // TODO: 클릭시에 취소선 표기, completed 로 구분
-              // <li key={index} className={classnames("", )}>
-                <li key={index} className={classnames("", (check.initailState === true ) && 'completed')}>
+              <li key={index} className={classnames("", )}>
+                {/* <li key={index} className={classnames("", (check.initailState === true ) && 'completed')}> */}
                 <div className="view" >
                   {/* TODO : check 상태 */}
                   <input className="toggle" type="checkbox" onChange={(event) => checkEvent(event.target.checked, index)}/>

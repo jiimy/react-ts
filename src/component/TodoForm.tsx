@@ -21,7 +21,7 @@ const TodoForm = () => {
           }
         }
       />
-      {/* {todos} */}
+      {todos}
       <TodoList data={todos} deleteTodo={
         (index: any) => {
           deleteTodo(index)
