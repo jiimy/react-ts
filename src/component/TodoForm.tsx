@@ -28,7 +28,7 @@ const TodoForm = () => {
         }
       }
       />
-      <Footer />
+      <Footer data={todos}/>
     </section>
   )
 }

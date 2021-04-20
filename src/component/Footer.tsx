@@ -1,11 +1,21 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import useTodoState from './useTodoState'
+
+type Props = {
+  data?: any;
+}
 
 // All, Active, Completed / Clear completed / Active 갯수 표기 
-const Footer = () => {
+const Footer = ({data} : Props) => {
+  const { todos, addTodo, deleteTodo } = useTodoState([]);
+  useEffect(() => {
+    console.log(todos);
+  }, [todos])
+
   return (
     <footer className="footer">
       <span className="todo-count">
-      <strong>1</strong>
+      <strong>{data.length}</strong>
       <span>item</span>
       <span> left</span>
     </span>

@@ -1,6 +1,5 @@
-import React from 'react'
-import TodoItem from './TodoItem'
-import useTodoState from './useTodoState'
+import React, { useState } from 'react'
+import classnames from 'classnames';
 
 type Props = {
   data?: any;
@@ -8,9 +7,15 @@ type Props = {
 }
 
 const TodoList = ({ data, deleteTodo }: Props) => {
+  const [check, setCheck] = useState(false);
+  const [checked, setChecked] = React.useState(true);
   const Click = (index:any) => {
     deleteTodo(index);
+  }
 
+  const checkEvent = (checked: any) => {
+    setCheck(!check);
+    console.log('aa');
   }
 
   return (
@@ -25,9 +30,10 @@ const TodoList = ({ data, deleteTodo }: Props) => {
         {data &&
           data.map((item: any, index: any) => {
             return (
-              <li key={index} className="completed">
+              <li key={index} className={classnames("", check === true && 'completed')}>
                 <div className="view" >
-                  <input className="toggle" type="checkbox" />
+                  {/* TODO : check 상태 */}
+                  <input className="toggle" type="checkbox" onChange={(event) => checkEvent(event.target.checked)}/>
                   <label> {data[index]} </label>
                   <button className="destroy" onClick={() => Click(index)}></button>
                 </div>
