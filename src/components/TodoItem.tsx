@@ -2,6 +2,20 @@ import React from 'react';
 import styles from './TodoItem.module.scss';
 import { Todo } from '../modules/todos';
 
+const apiUrl:string = "https://pokeapi.co/api/v2/pokemon/";
+
+async function load(number: number): Promise<object>{
+    const data = await fetch(`${apiUrl}${number}`);
+    const json = await data.json();
+
+    return json;
+}
+
+load(2)
+.then((item) => {
+    console.log(item)
+})
+
 type TodoItemProps = {
   todo: Todo;
 };
