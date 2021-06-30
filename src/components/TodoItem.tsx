@@ -26,7 +26,7 @@ function TodoItem({ todo }: TodoItemProps) {
     <li className={`TodoItem ${todo.done ? 'done' : ''}`}>
       <span className="text">{todo.text}</span>
       <span className="remove">(X)</span>
-      <div className={styles.TodoItem__text}>asdfasdf</div>
+      <div className={`${styles.TodoItem__text} ${styles.remove}`}>asdfasdf</div>
       {
         console.log('styles', styles)
       }
