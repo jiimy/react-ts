@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import Counter from './components/Counter';
-import Todos from './components/Todos';
-import CounterContainer from './containers/CounterContainer';
-import TodoList from './components/TodoList';
-import TodoInsert from './components/TodoInsert';
+import Router from './Router';
+import './test.scss';
 
 const App = () => {
   return (
@@ -14,9 +11,8 @@ const App = () => {
     <div>
       {/* <Counter number={0}/> */}
       {/* <CounterContainer /> */}
-      {/* <TodoList/> */}
-      {/* <TodoInsert/> */}
-      asdfasdf
+      {/* 커밋테스트 */}
+      <Router/>
     </div>
   );
 };

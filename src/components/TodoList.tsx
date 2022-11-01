@@ -1,20 +1,20 @@
-import React from 'react';
-import useTodos from '../hooks/useTodos';
-import { Todo } from '../modules/todos';
+import React from 'react'
+import { useObserver } from 'mobx-react-lite';
+
+import useStore from '../useStore';
 import TodoItem from './TodoItem';
 
-function TodoList() {
-  const todos = useTodos(); // TODO: 커스텀 Hook 사용하여 조회
-
-  if (todos.length === 0) return <p>등록된 항목이 없습니다.</p>;
-    
-  return (
-    <ul>
-      {todos.map(todo => (
-        <TodoItem todo={todo} key={todo.id} />
+const TodoList = () => {
+  const { todo: {todoData}, } = useStore();
+  
+  return useObserver(() => (
+    <div>
+      'TodoList'
+      {todoData.map((v) => (
+        <TodoItem data={v} key={`todoData_${v.id}`} />
       ))}
-    </ul>
-  );
+    </div>
+  ));
 }
 
-export default TodoList;
+export default TodoList
