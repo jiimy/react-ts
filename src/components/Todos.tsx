@@ -8,7 +8,7 @@ type Props = {
 
 
 
-const TodoItem = ({todo, onRemove, onToggle}:Props) => {
+const TodoItem = ({todo = 1, onRemove, onToggle}:Props) => {
   return (
     <div>
       <input type="checkbox" name="" id=""/>

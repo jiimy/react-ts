@@ -14,8 +14,9 @@ const App = () => {
     <div>
       {/* <Counter number={0}/> */}
       {/* <CounterContainer /> */}
-      <TodoList/>
-      <TodoInsert/>
+      {/* <TodoList/> */}
+      {/* <TodoInsert/> */}
+      asdfasdf
     </div>
   );
 };
